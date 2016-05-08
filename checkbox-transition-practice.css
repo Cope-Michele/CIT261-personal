@@ -1,0 +1,89 @@
+/* Checkbox Transition Practice */
+
+/*------------------------------*/
+/*-----------Body Style---------*/
+/*------------------------------*/
+body {
+    font-family: sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+    font-size: 3em;
+    text-align: center;
+}
+
+form {
+  width: 100px;
+  margin: 0 auto;
+}
+
+/*------------------------------*/
+/*-----Base Checkbox Style------*/
+/*------------------------------*/
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked 
+input[type="checkbox"]:not(:checked) + label,
+input[type="checkbox"]:checked + label{
+}
+
+/*------------------------------*/
+/*--------Checkbox Aspect-------*/
+/*------------------------------*/
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="checkbox"]:checked + label:before {
+}
+
+/*------------------------------*/
+/*-----checked mark aspect------*/
+/*------------------------------*/
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 3px; left: 4px;
+  font-size: 18px;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .25s;
+}
+
+/*--------------------------------*/
+/*-Checked Mark Aspect Transition-*/
+/*--------------------------------*/
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*------------------------------*/
+/*-------Disable Checkbox-------*/
+/*------------------------------*/
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 1px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9 !important;
+}
